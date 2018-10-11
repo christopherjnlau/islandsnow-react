@@ -2,11 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import './style.css';
 import 'semantic-ui-css/semantic.min.css';
-import { Container, Header, Menu, Icon, Dropdown, Image, Grid, Divider, List, Label, Input, Form } from 'semantic-ui-react';
+import { Container, Menu, Icon, Dropdown, Image, Grid, List, Input, Button } from 'semantic-ui-react';
 
 class TopMenu extends React.Component {
   render() {
     return (
+
         <Menu borderless className="topmenu">
           <Container>
             <Menu.Item fitted><Icon name="facebook f" /></Menu.Item>
@@ -30,7 +31,7 @@ class TopMenu extends React.Component {
 class IslandSnowLogo extends React.Component {
   render() {
     return (
-        <Header as="h1">IslandSnowLogo</Header>
+        <Image src='https://cdn.shopify.com/s/files/1/1035/5187/t/5/assets/logo.png?2590945415893160629' centered />
     )
   }
 }
@@ -38,7 +39,32 @@ class IslandSnowLogo extends React.Component {
 class MiddleMenu extends React.Component {
   render() {
     return (
-        <Header as="h1">MiddleMenu</Header>
+        <div className='mid'>
+          <Container>
+        <Menu className = 'ui borderless compact middle menu'>
+
+            <Dropdown item text="MEN">
+              <Dropdown.Menu>
+                <Dropdown.Item>My cart is currently empty.</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Dropdown item text="WOMEN">
+              <Dropdown.Menu>
+                <Dropdown.Item>My cart is currently empty.</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Menu.Item>KIDS</Menu.Item>
+            <Dropdown item text="BRANDS">
+              <Dropdown.Menu>
+                <Dropdown.Item>My cart is currently empty.</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Menu.Item>SEARCH</Menu.Item>
+
+        </Menu>
+  </Container>
+        </div>
+
     )
   }
 }
@@ -46,7 +72,7 @@ class MiddleMenu extends React.Component {
 class FullWidthImage extends React.Component {
   render() {
     return (
-        <Header as="h1">FullWidthImage</Header>
+        <Image src='https://cdn.shopify.com/s/files/1/1035/5187/t/5/assets/slide1.jpg?2590945415893160629' fluid/>
     )
   }
 }
@@ -54,7 +80,27 @@ class FullWidthImage extends React.Component {
 class FooterMenu extends React.Component {
   render() {
     return (
-        <Header as="h1">FooterMenu</Header>
+        <div className='k'>
+        <Grid padded className = 'k' divided='vertically'>
+          <Grid.Row padded className ='pad' container columns={3} >
+            <Grid.Column padded><h5>NAVIGATION</h5><hr/><List>
+              <List.Item>About us</List.Item>
+              <List.Item>Videos</List.Item>
+              <List.Item>Store Locations</List.Item>
+            </List>
+            </Grid.Column>
+            <Grid.Column padded><h5>MAIN MENU</h5><hr/><List>
+              <List.Item>Men</List.Item>
+              <List.Item>Women</List.Item>
+              <List.Item>Kids</List.Item>
+            </List></Grid.Column>
+            <Grid.Column padded><h5>CONNECT</h5><hr/><List>
+              <List.Item>Sign up for the latest updates</List.Item>
+              <List.Item><Input focus placeholder='Enter email address' /><Button className='black' size='small'>Join</Button></List.Item>
+            </List></Grid.Column>
+          </Grid.Row>
+        </Grid>
+        </div>
     )
   }
 }
